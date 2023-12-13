@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2 HTML</title>
+</head>
+
+<body>
+    <form action="resultado.html" method="post">
+        <h1>Registro de usuario</h1>
+        <p>
+            Nombre <input type="text" name="nombre" placeholder="Nombre">
+            Apellidos <input type="text" name="apellidos" placeholder="Apellidos">
+        </p>
+        <p>
+            Correo electrónico <input type="email" name="correo" placeholder="Correo electrónico" required>
+            Contraseña <input type="password" name="contraseña" placeholder="Contraseña" required>
+        </p>
+
+        <p>¿Eres mayor de edad?</p>
+        Si <input type="radio" name="mayordeedad" value="s">
+        No <input type="radio" name="mayordeedad" value="n">
+        
+        <p>Selecciona un tipo de suscripción</p>
+        <select name="suscripcion">
+            <option value="d">Diaria</option>
+            <option value="m">Mensual</option>
+            <option value="a">Anual</option>
+        </select>
+
+        <p>Selecciona color de fondo</p>
+        <input type="color" name="color">
+        <p><input type="submit" name="Enviar" value="Enviar"></p>
+    </form>
+</body>
+
+</html>
