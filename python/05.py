@@ -6,7 +6,7 @@ print(variable)
 
 variable = False
 print(variable)
-'''
+
 condicion  = 5 > 4
 print(condicion)
 
@@ -19,4 +19,23 @@ if (condicion):
 else:
     print("Es falso")
 
-print(8+6+3+3+7+5+4)
+'''
+
+#Condicionales
+'''
+condicion = 5 > 8
+if condicion:
+    print("La condición es verdadera")
+else:
+    print("La condición es falsa")
+'''
+
+numero1 = 5
+numero2 = 8
+
+if (numero1 == numero2):
+    print("Los números son iguales")
+elif (numero1 > numero2):
+    print("El numero1 es mayor que el numero2")
+else:
+    print("El numero1 es menor que el numero2")
