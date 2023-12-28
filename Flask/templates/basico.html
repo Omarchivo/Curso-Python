@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestro sitio web</title>
+</head>
+<body>
+    <div>
+        <a href="{{ url_for('pagina1') }}"> Página 1</a>
+        <a href="{{ url_for('pagina2') }}"> Página 2</a>
+        <a href="{{ url_for('static',filename='image2.jpeg')}}"> Playa </a>
+    </div>
+
+    <br/>
+    <hr/>
+    <br/>
+
+    {% block contenido %}
+
+    {% endblock %}
+
+    <br/>
+    <hr/>
+    <br/>
+
+    <h5>Esto es el pie de página</h5>
+</body>
+</html>
