@@ -26,7 +26,6 @@ def gracias():
 def validador():
     return render_template('validador.html')
 
-
 @app.route('/resultado')
 def resultado():
     #Recupera el nombre que envia el usuario por el formulario
