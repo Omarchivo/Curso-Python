@@ -34,3 +34,6 @@ class Persona(db.Model):
     def __repr__(self):
         texto = "Personas : nombre={} edad={} color={}".format(self.nombre,self.edad,self.color)
         return texto
+
+if __name__ == '__main__':
+    app.run(debug = True)
