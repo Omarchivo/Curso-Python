@@ -38,27 +38,27 @@ def lista():
     mascotas = Mascota.query.all()
     return render_template('vista_lista.html',mascotas=mascotas)
 
-@app.route('/alta')
+@app.route('/alta', methods = ['GET','POST'])
 def alta():
     formulario = FormularioAlta()
     if formulario.validate_on_submit():
         nombre = formulario.nombre.data
         mascota = Mascota(nombre)
         db.session.add(mascota)
-        db.commit()
+        db.session.commit()
 
         return redirect(url_for('lista'))
 
     return render_template('vista_alta.html', formulario=formulario)
 
-@app.route('/borrar')
+@app.route('/borrar', methods = ['GET','POST'])
 def borrar():
     formulario = FormularioBaja()
     if formulario.validate_on_submit():
         id = formulario.id.data
         mascota_borrar = Mascota.query.get(id)
         db.session.delete(mascota_borrar)
-        db.commit()
+        db.session.commit()
 
         return redirect(url_for('lista'))
 
