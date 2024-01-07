@@ -9,11 +9,11 @@ def load_user(Usuario_id):
 class Usuario(db.Model, UserMixin):
     __tablename__ = 'usuarios'
     id = db.Column(db.Integer, primary_key = True)
-    email = db.Column(db.String(100), unique = True, index = True)
-    nombre = db.Column(db.String(150), unique = True, index = True)
-    password_encriptada = db.Column(db.String(200))
+    email = db.Column(db.String(64), unique = True, index = True)
+    nombre = db.Column(db.String(120), unique = True, index = True)
+    password_encriptada = db.Column(db.String(128), nullable = False)
 
-    def __init__ (self, nombre, password):
+    def __init__ (self, email, nombre, password):
         self.email = email
         self.nombre = nombre
         self.password_encriptada = generate_password_hash(password)

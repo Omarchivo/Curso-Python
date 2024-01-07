@@ -1,6 +1,8 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField, ValidationError
 from wtforms.validators import DataRequired, Email, EqualTo
+from .modelos import Usuario
+from wtforms import ValidationError
 
 class Formulario_Registro(FlaskForm):
     email = StringField('Email', validators=[DataRequired(), Email()])

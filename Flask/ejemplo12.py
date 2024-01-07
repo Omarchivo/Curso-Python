@@ -3,7 +3,7 @@ from flask import render_template, redirect, request, url_for, flash
 from flask_login import login_user, login_required, logout_user
 from proyectoLogin.modelos import Usuario
 from proyectoLogin.formulario import Formulario_Registro, Formulario_Login
-from werkeug.security import generate_password_hash, check_password_hash
+from werkzeug.security import generate_password_hash, check_password_hash
 
 @app.route('/')
 def principal():
@@ -27,7 +27,7 @@ def entrar():
     if formulario.validate_on_submit():
         usuario = Usuario.query.filter_by(email=formulario.email.data).first()
         if usuario is not None:
-            if check_password_hash(usuario.password_encriptada, usuario.password.data):
+            if check_password_hash(usuario.password_encriptada, formulario.password.data):
                 login_user(usuario)
                 flash('Usuario ha entrado correctamente')
                 proxima = request.args.get('next')

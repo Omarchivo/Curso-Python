@@ -18,6 +18,3 @@ Migrate(app,db)
 
 gestor.init_app(app)
 gestor.login_view = 'login'
-
-if __name__ == '__main__':
-    app.run(debug = True)
